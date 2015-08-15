@@ -8,8 +8,54 @@
     <title>Score Tracker</title>
 <!--    <link rel="stylesheet" type="text/css" href="game_counter_styles.css">-->
 
+    <style>
+        footer {
+            text-align: center;
+            padding-bottom: 1em;
+            padding-top: 1em;
+            position:absolute;
+            bottom:0;
+            width:100%;
+            background-color: lightgrey;
+        }
+    </style>
+</head>
 
-        <!-- Latest compiled and minified CSS -->
+<body>
+<div class="grid">
+    <div id="quiz" class="centered grid__col--8">
+        <h1>Score Tracker</h1>
+        
+        <input type="text" id="player-name" placeholder="Who's playing?  Click to enter your name!"/>
+
+        
+        <h2 id="score" class="headline-secondary--grouped" style = "margin-bottom: 10px"></h2>
+
+        <div class = "buttons-group">
+            <button id="decrement" class="btn--default">- 1</button>
+            <button id="increment" class="btn--default">+ 1</button>
+        </div>
+
+        
+
+        <footer style="align: bottom">
+            <button id="menu-toggle">Options</button>
+            <div id="number-players-selector" style="">
+                <button id="2-players">2</button>
+                <button id="3-players">3</button>
+                <button id="4-players">4</button>
+                <button id="5-players">5</button>
+                <br />
+                <a id="close-menu" style="">Close</button>
+            </div>
+        </footer>
+    </div>
+</div>
+
+    <!-- jQuery --> 
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    
+    <!-- Latest compiled and minified CSS -->
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
         <!-- Optional theme -->
@@ -17,38 +63,11 @@
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-</head>
-
-<body>
-
-<div class="grid">
-    <div id="quiz" class="centered grid__col--8">
-        <h1>Score Tracker</h1>
-        
-        <input type="text" placeholder="Who's playing?  Click to enter your name!"/>
-
-        
-        <h2 id="score" class="headline-secondary--grouped" style = "margin-bottom: 10px"></h2>
-
-<!--        <p id="choice0"></p>-->
-        <div class = "buttons-group">
-            <button id="decrement" class="btn--default">- 1</button>
-            <button id="increment" class="btn--default">+ 1</button>
-        </div>
-<!--        <p id="choice1"></p>-->
-        
-
-        <footer>
-<!--            <p id="progress">Question x of y</p>-->
-        </footer>
-    </div>
-</div>
-
+    
+    <!-- javascript files -->
     <script src="player.js"></script>
+    <script src="game.js"></script>
     <script src="ui_controller.js"></script>
-
-    <script src="quiz_ui.js"></script>
-    <script src="app.js"></script>
+    <script src="test.js"></script>
 </body>
 </html>
