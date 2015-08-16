@@ -6,7 +6,10 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Score Tracker</title>
-<!--    <link rel="stylesheet" type="text/css" href="game_counter_styles.css">-->
+    
+    <!-- Boostrap, local -->
+    <link rel="stylesheet" type="text/css" href="../../../Frameworks/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+<!--<link rel="stylesheet" type="text/css" href="game_counter_styles.css">-->
 
     <style>
         footer {
@@ -18,15 +21,31 @@
             width:100%;
             background-color: lightgrey;
         }
+        
+        .player-name-field {
+            width: 40%;
+            border: none;
+            font-size: 2em;
+        }
+        
+        .buttons-group button {
+            //nothing yet
+        }
+        
+        .edit {
+            border-bottom: 3px black solid;
+        }
     </style>
 </head>
 
 <body>
 <div class="grid">
-    <div id="quiz" class="centered grid__col--8">
+    <div id="players" class="centered grid__col--8">
+        <button id="test-button">Test something!</button>
         <h1>Score Tracker</h1>
+      
         
-        <input type="text" id="player-name" placeholder="Who's playing?  Click to enter your name!"/>
+        <input type="text" id="player-name" class="player-name-field" placeholder="Who's playing?  Click to enter your name!"/>
 
         
         <h2 id="score" class="headline-secondary--grouped" style = "margin-bottom: 10px"></h2>
@@ -53,8 +72,10 @@
 </div>
 
     <!-- jQuery --> 
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    
+<!--    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+        <!-- jQuery local -->
+        <script src="../../../Frameworks/jquery-1.11.3.min.js"></script>
+
     <!-- Latest compiled and minified CSS -->
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
