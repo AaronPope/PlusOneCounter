@@ -66,6 +66,18 @@ function toggleMenu() {
     $("#number-players-selector").slideToggle();
     $("#menu-toggle").toggle();
 }
+
+$("#add-2-train").click(function() {
+    console.log("add-2-train clicked");
+   testPlayer.incrementScore(2);
+    updateScore();
+});
+
+var updateScore = function() {
+    console.log("updateScore() triggered");
+    scoreText.text(testPlayer.score);
+};
+
 //Lazy area where I should be making a new JS file but just want to test some things
 
 $("#test-button").click(function() {
@@ -79,10 +91,11 @@ $("#add-player-button").click(function() {
 $("#player-name").focusout(function() {
     $(this).css("color", "grey");
     $(this).toggleClass("edit");
-    $(this).attr("placeholder", "");
 });
 
 $("#player-name").focusin(function() {
     $(this).css("color", "black");
     $(this).toggleClass("edit");
+    $(this).attr("placeholder", "");
+    $(this).append("<button>Done</button>");
 });

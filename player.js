@@ -9,10 +9,10 @@ Player.prototype.resetScore = function() {
     this.score = scoreResetValue;
 }
 
-Player.prototype.incrementScore = function() {
-    ++this.score;
+Player.prototype.incrementScore = function(value) {
+    score += value;
 }
 
-Player.prototype.decrementScore = function() {
-    --this.score;
+Player.prototype.decrementScore = function(value) {
+    score -= value;
 }
