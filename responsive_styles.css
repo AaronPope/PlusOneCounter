@@ -1,0 +1,13 @@
+#quiz {
+	background-color: rgba(33, 24, 115, .5);
+}
+
+@media only screen and (max-width: 768px) {
+	#quiz {
+		background-color: yellow;
+	}
+	
+	h1 {
+		margin: 0 auto;
+	}
+}
