@@ -18,9 +18,9 @@ $(document).ready(function() {
     $("#players").append("<br /><button id='add-player-button'>Add</button>");
 });
 
-$("#add-player-button").on("click", function() {  
-    alert("test");
-});
+//$("#add-player-button").on("click", function() {  
+//    alert("test");
+//});
 
 incrementButton.onclick = function() {
     testPlayer.incrementScore();
@@ -84,16 +84,16 @@ $("#test-button").click(function() {
     addNewPlayerDiv();
 });
 
-$("#add-player-button").click(function() {
-    addNewPlayerDiv();
+$("#add-player-div").click(function() {
+    alert(addNewPlayerDiv());
 });
 
-$("#player-name").focusout(function() {
+$(".player-name-field").focusout(function() {
     $(this).css("color", "grey");
     $(this).toggleClass("edit");
 });
 
-$("#player-name").focusin(function() {
+$(".player-name-field").focusin(function() {
     $(this).css("color", "black");
     $(this).toggleClass("edit");
     $(this).attr("placeholder", "");

@@ -15,7 +15,7 @@ input {
 
 /*** Classes ***/
 .player-name-field {
-	width: 40%;
+	width: 100%;
 	border: none;
 	font-size: 1.5em;
 }
@@ -35,7 +35,7 @@ input {
 
 .edit {
 	border-bottom: 2px #ccc solid;
-	outline: none;
+	//outline: none;
 }
 
 .player-box , #add-player-div {
