@@ -99,3 +99,7 @@ $("#player-name").focusin(function() {
     $(this).attr("placeholder", "");
     $(this).append("<button>Done</button>");
 });
+
+$(".remove-player").click(function () {
+	alert($(this) + " happened.");
+});

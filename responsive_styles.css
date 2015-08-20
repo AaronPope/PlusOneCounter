@@ -1,13 +1,94 @@
-#quiz {
+/*** Standard Elements ***/
+footer {
+	text-align: center;
+	padding-bottom: 1em;
+	padding-top: 1em;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	background-color: lightgrey;
+}
+
+input {
+	background-color: transparent;
+}
+
+/*** Classes ***/
+.player-name-field {
+	width: 40%;
+	border: none;
+	font-size: 1.5em;
+}
+
+.buttons-group button {
+	//nothing yet
+}
+
+.remove-player {
+	background-color: transparent;
+	float: right;
+	font-size: 75%;
+	margin: .2em .5em 0 0;
+	padding: .1em .5em;
+	outline: solid red 2px;
+}
+
+.edit {
+	border-bottom: 2px #ccc solid;
+	outline: none;
+}
+
+.player-box , #add-player-div {
+	width: 45%;
+	float: left;
+	margin: 0 2.5%;
+}
+
+/*** IDs ***/
+#add-player-div {
+	margin: 2em 2em;
+	height: 20%;
+	background-color: lightgrey;
+	text-align: center;
+	font-style: italic;
+}
+
+#add-player-div:hover {
+	cursor: pointer;
+}
+
+#test-button {
+	margin: 0 auto;
+}
+		
+/*** Responsive Styles ***/		
+input:focus {
+	outline: none;
+}
+
+h1 {
 	background-color: rgba(33, 24, 115, .5);
 }
 
 @media only screen and (max-width: 768px) {
-	#quiz {
-		background-color: yellow;
-	}
-	
+	/*** Standard Elements ***/
 	h1 {
 		margin: 0 auto;
+	}
+	
+	/*** Classes ***/
+	.player-name-field, #add-player-div {
+		width: 100%;
+		padding: 0 1em;
+	}
+	
+	.player-box {
+		width: 100%;
+		margin: 0 1em;
+	}
+	
+	/*** IDs ***/
+	#players {
+		background-color: yellow;
 	}
 }

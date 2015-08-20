@@ -10,57 +10,55 @@
     <!-- Boostrap, local -->
     <link rel="stylesheet" type="text/css" href="../../../Frameworks/bootstrap-3.3.5-dist/css/bootstrap.min.css">
 <!--<link rel="stylesheet" type="text/css" href="game_counter_styles.css">-->
-
-    <style>
-        footer {
-            text-align: center;
-            padding-bottom: 1em;
-            padding-top: 1em;
-            position:absolute;
-            bottom:0;
-            width:100%;
-            background-color: lightgrey;
-        }
-        
-        .player-name-field {
-            width: 40%;
-            border: none;
-            font-size: 1.5em;
-        }
-        
-        .buttons-group button {
-            //nothing yet
-        }
-        
-        .edit {
-            border-bottom: 2px #ccc solid;
-            outline: none;
-        }
-    </style>
+	<link rel="stylesheet" type="text/css" href="responsive_styles.css">
 </head>
 
 <body>
 <div class="grid">
     <div id="players" class="centered grid__col--8">
-        <button id="test-button">Test something!</button>
-        <h1>Score Tracker</h1>
-      
-        
-        <input type="text" id="player-name" class="player-name-field" placeholder="Who's playing?  Click to enter your name!"/>
+		<div id="player-1" class="player-box">
+			<h1>Score Tracker
+				<div class="remove-player">X</div>
+			</h1>
+		  
+			
+			<input type="text" id="player-1-name" class="player-name-field" placeholder="Who's playing?  Click to enter your name!"/>
 
-        
-        <h2 id="score" class="headline-secondary--grouped" style = "margin-bottom: 10px"></h2>
+			
+			<h2 id="score" class="headline-secondary--grouped" style = "margin-bottom: 10px"></h2>
 
-        <div class = "buttons-group">
-            <button id="add-2-train" class="btn--default">2</button>
-            <button id="add-3-train" class="btn--default">3</button>
-            <button id="add-4-train" class="btn--default">4</button>
-            <button id="add-5-train" class="btn--default">5</button>
-            <button id="add-6-train" class="btn--default">6</button>
-        </div>
+			<div class = "buttons-group">
+				<button class="add-2-train btn--default">2</button>
+				<button class="add-3-train btn--default">3</button>
+				<button class="add-4-train btn--default">4</button>
+				<button class="add-5-train btn--default">5</button>
+				<button class="add-6-train btn--default">6</button>
+			</div>
+		</div>
+		
+		<div id="player-2" class="player-box">
+			<h1>Score Tracker
+				<div class="remove-player">X</div>
+			</h1>
+		  
+			
+			<input type="text" id="player-2-name" class="player-name-field" placeholder="Who's playing?  Click to enter your name!"/>
 
-        
+			
+			<h2 id="score" class="headline-secondary--grouped" style = "margin-bottom: 10px"></h2>
 
+			<div class = "buttons-group">
+				<button class="add-2-train btn--default">2</button>
+				<button class="add-3-train btn--default">3</button>
+				<button class="add-4-train btn--default">4</button>
+				<button class="add-5-train btn--default">5</button>
+				<button class="add-6-train btn--default">6</button>
+			</div>
+		</div>
+		
+		<div id="add-player-div">
+			<h2>Add a player</h2>
+		</div>
         <footer style="align: bottom">
             <button id="menu-toggle">Options</button>
             <div id="number-players-selector" style="">
