@@ -1,4 +1,9 @@
-/*** Standard Elements ***/
+/*********************************************
+            *** Standard Elements ***
+ *********************************************/
+html, body {
+    margin: 0 0;
+}
 footer {
 	text-align: center;
 	padding-bottom: 1em;
@@ -13,7 +18,16 @@ input {
 	background-color: transparent;
 }
 
-/*** Classes ***/
+
+
+
+/*********************************************
+                *** Classes ***
+ *********************************************/
+.headline-secondary--grouped {
+    margin-bottom: 10px;
+}
+
 .player-name-field {
 	width: 100%;
 	border: none;
@@ -31,6 +45,7 @@ input {
 	margin: .2em .5em 0 0;
 	padding: .1em .5em;
 	outline: solid red 2px;
+    border-radius: 0%;
 }
 
 .edit {
@@ -44,7 +59,12 @@ input {
 	margin: 0 2.5%;
 }
 
-/*** IDs ***/
+
+
+
+/*********************************************
+                *** IDs ***
+ *********************************************/
 #add-player-div {
 	margin: 2em 2em;
 	height: 20%;
@@ -53,7 +73,7 @@ input {
 	font-style: italic;
 }
 
-#add-player-div:hover {
+#add-player-div:hover, .remove-player:hover {
 	cursor: pointer;
 }
 
@@ -61,25 +81,31 @@ input {
 	margin: 0 auto;
 }
 		
-/*** Responsive Styles ***/		
+
+
+
+/*********************************************
+            *** Responsive Styles ***
+ *********************************************/	
 input:focus {
 	outline: none;
 }
 
-h1 {
-	background-color: rgba(33, 24, 115, .5);
+#headline {
+	background-color: rgba(33, 24, 115, .35);
 }
+
 
 @media only screen and (max-width: 768px) {
 	/*** Standard Elements ***/
-	h1 {
+	#headline {
 		margin: 0 auto;
 	}
 	
 	/*** Classes ***/
 	.player-name-field, #add-player-div {
 		width: 100%;
-		padding: 0 1em;
+		margin: 0 1em;
 	}
 	
 	.player-box {
@@ -91,4 +117,8 @@ h1 {
 	#players {
 		background-color: yellow;
 	}
+}
+
+@media only screen and (max-width: 970px) {
+    background-color: orange;
 }
