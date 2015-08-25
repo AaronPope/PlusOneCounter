@@ -4,7 +4,8 @@ var decrementButton = document.getElementById("decrement");
 var progressText = document.getElementById("progress");
 var testPlayer = new Player("Jerry", 0);
 var testGame = new Game();
-var numberOfPlayers = 1;
+var numberOfPlayers = 2;
+var defaultPlayerNameText = "Who's playing? Click to enter your name.";
 
 //Set initial score to 0
 //scoreText.innerHTML = 0;
@@ -22,28 +23,32 @@ $(document).ready(function() {
 //    alert("test");
 //});
 
-incrementButton.onclick = function() {
-    testPlayer.incrementScore();
-    scoreText.text(testPlayer.score);
-}
-
-decrementButton.onclick = function() {
-    if(testPlayer.score === 0 && !testGame.allowNegatives) { 
-        alert("Nope!");
-    }
-    else {
-        testPlayer.decrementScore();
-        scoreText.text(testPlayer.score);
-    }
-}
+//incrementButton.onclick = function() {
+//    testPlayer.incrementScore();
+//    scoreText.text(testPlayer.score);
+//}
+//
+//decrementButton.onclick = function() {
+//    if(testPlayer.score === 0 && !testGame.allowNegatives) { 
+//        alert("Nope!");
+//    }
+//    else {
+//        testPlayer.decrementScore();
+//        scoreText.text(testPlayer.score);
+//    }
+//}
 
 var addNewPlayerDiv = function() {
+    ++numberOfPlayers;
     console.log("addNewPlayerDiv() triggered...");
-    $("#players").append('<input type="text" id="player-name" class="player-name-field" placeholder="Who\'s playing?  Click to enter your name!"/>'
+    $("#players").append('<input type="text" id="player-' + numberOfPlayers + '-name" class="player-name-field" placeholder="Who\'s playing?  Click to enter your name!"/>'
                 + '<h2 id="score" class="headline-secondary--grouped" style = "margin-bottom: 10px"></h2>'
                 + '<div class = "buttons-group">'
-                + '<button id="decrement" class="btn--default">- 1</button>'
-                + '<button id="increment" class="btn--default">+ 1</button>'
+                +   '<button class="add-2-train btn--default">2</button>'
+                +   '<button class="add-3-train btn--default">3</button>'
+                +   '<button class="add-4-train btn--default">4</button>'
+                +   '<button class="add-5-train btn--default">5</button>'
+                +   '<button class="add-6-train btn--default">6</button>'
                 + '</div>');
 }
 
@@ -91,6 +96,9 @@ $("#add-player-div").click(function() {
 $(".player-name-field").focusout(function() {
     $(this).css("color", "grey");
     $(this).toggleClass("edit");
+    if($(this).val().length === 0) {
+        $(this).attr("placeholder", defaultPlayerNameText);
+    }
 });
 
 $(".player-name-field").focusin(function() {
@@ -101,5 +109,10 @@ $(".player-name-field").focusin(function() {
 });
 
 $(".remove-player").click(function () {
-	alert($(this) + " happened.");
+	console.log($(this) + " happened.");
+    $(this).toggle();
+});
+
+$("#player-3-name").focusin(function() {
+    alert("Player 3 just got focus");
 });
