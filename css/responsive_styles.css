@@ -39,13 +39,17 @@ input {
 }
 
 .remove-player {
-	background-color: transparent;
+	background-color: lightgray;
 	float: right;
 	font-size: 75%;
 	margin: .2em .5em 0 0;
 	padding: .1em .5em;
-	outline: solid red 2px;
-    border-radius: 0%;
+/*	border: solid red 2px;*/
+    border-radius: 100%;
+}
+
+.remove-player:hover {
+    background-color: lightcoral;
 }
 
 .edit {
@@ -59,6 +63,9 @@ input {
 	margin: 0 2.5%;
 }
 
+.btn--default:hover {
+    color: lightgray;
+}
 
 
 
