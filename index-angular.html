@@ -2,7 +2,7 @@
 <!--Author: Aaron Pope-->
 <!-- remote sync test -->
 <!DOCTYPE html>
-<html>
+<html ng-app="counterApp">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Score Tracker</title>
@@ -15,18 +15,17 @@
 <!--<link rel="stylesheet" type="text/css" href="game_counter_styles.css">-->
 </head>
 
-<body>
+<body ng-controller="scoresCtrl">
     <h1 id="headline">Score Tracker</h1>
     <div id="players" class="">
-		<div id="player-1" class="player-box">			
+		<div  id="player-1" class="player-box">			
             <div class="remove-player">X</div>	
 			<input type="text" id="player-1-name" class="player-name-field" placeholder="Who's playing?  Click to enter your name!"/>
 
-			
-			<h2 id="score" class="headline-secondary--grouped"></h2>
+			<h2 ng-model="playerScore" id="score" class="headline-secondary--grouped">{{playerScore}}</h2>
 
 			<div class = "buttons-group">
-				<button class="add-2-train btn--default">2</button>
+				<button ng-click="addScore()" class="add-2-train btn--default">2</button>
 				<button class="add-3-train btn--default">3</button>
 				<button class="add-4-train btn--default">4</button>
 				<button class="add-5-train btn--default">5</button>
@@ -82,8 +81,30 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
     <!-- javascript files -->
+    <script src="https://code.angularjs.org/1.4.5/angular.js"></script>
     <script src="js/player.js"></script>
     <script src="js/game.js"></script>
-    <script src="js/ui_controller.js"></script>
+    <!--<script src="js/ui_controller.js"></script>-->
+    
+    <script>
+        //instantiates the Angular app
+        var counterApp = angular.module("counterApp", []);
+        
+        
+        counterApp.controller('scoresCtrl', function($scope) {
+            $scope.twoTrainLengthScore = 2;
+            $scope.threeTrainLengthScore = 4;
+            $scope.fourTrainLengthScore = 7;
+            $scope.fiveTrainLengthScore = 10;
+            $scope.sixTrainLengthScore = 15;
+            
+            $scope.playerScore = 0;
+            
+            
+            $scope.addScore = function() {
+                $scope.playerScore += $scope.twoTrainLengthScore;
+            };
+        });
+    </script>
 </body>
 </html>
