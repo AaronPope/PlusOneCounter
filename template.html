@@ -1,0 +1,12 @@
+<div class="remove-player">X</div>	
+    <input type="text" id="player-1-name" class="player-name-field" placeholder="Who's playing?  Click to enter your name!"/>
+
+    <h2 ng-model="playerScore" id="score" class="headline-secondary--grouped">{{playerScore}}</h2>
+
+    <div class = "buttons-group">
+        <button ng-click="addScore(2)" class="add-2-train btn--default">2</button>
+        <button ng-click="addScore(4)" class="add-3-train btn--default">3</button>
+        <button ng-click="addScore(7)" class="add-4-train btn--default">4</button>
+        <button ng-click="addScore(10)" class="add-5-train btn--default">5</button>
+        <button ng-click="addScore(15)" class="add-6-train btn--default">6</button>
+</div>

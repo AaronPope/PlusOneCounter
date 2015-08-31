@@ -18,6 +18,10 @@ input {
 	background-color: transparent;
 }
 
+button {
+    margin: 0 2em;
+}
+
 
 
 
@@ -67,8 +71,13 @@ input {
     color: lightgray;
 }
 
+.click-background-color-positive {
+    background-color: darkseagreen;
+}
 
-
+.click-background-color-negative {
+    background-color: indianred;
+}
 /*********************************************
                 *** IDs ***
  *********************************************/
