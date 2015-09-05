@@ -15,10 +15,10 @@
 <!--<link rel="stylesheet" type="text/css" href="game_counter_styles.css">-->
 </head>
 
-<body ng-controller="scoresCtrl">
+<body>
     <h1 id="headline">Score Tracker</h1>
     <div id="players" class="">
-		<div  id="player-1" class="player-box">			
+		<div  ng-controller="scoresCtrl" id="player-1" class="player-box">			
             <div class="remove-player">X</div>	
 			<input type="text" id="player-1-name" class="player-name-field" placeholder="Who's playing?  Click to enter your name!"/>
 
@@ -50,7 +50,7 @@
 			</div>
 		</div>
         
-        <test-template></test-template>
+        <test-template ng-controller="scoresCtrl"></test-template>
 		
 		<div id="add-player-div">
 			<h2>Add a player</h2>
