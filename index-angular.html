@@ -118,6 +118,12 @@
         })
         .mouseup(function() {
            toggleButtonBackgroundPositive($(this));
+        })
+        //removes the background color even if the mouse is pulled away from the button
+        .mouseleave(function() {
+            if($(this).hasClass("click-background-color-positive")) {
+                toggleButtonBackgroundPositive($(this));
+            }
         });
         
         var toggleButtonBackgroundPositive = function(element) {
