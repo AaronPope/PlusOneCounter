@@ -73,7 +73,7 @@
     <!-- jQuery --> 
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <!-- jQuery local -->
-        <script src="../../../Frameworks/jquery-1.11.3.min.js"></script>
+<!--        <script src="../../../Frameworks/jquery-1.11.3.min.js"></script>-->
 
     <!-- Latest compiled and minified CSS -->
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -109,11 +109,13 @@
                 $scope.playerScore += value;
             };
         })
-        .directive('testTemplate', function() {
-          return {
-            templateUrl: 'template.html' 
-          };    
-        });
+        .directive('testTemplate', ['$http', '$complile', 
+            function($http, $compile) {
+                return {
+                    templateUrl: 'template.html', 
+                }
+            }
+        ]);
         
         $("button").mousedown(function() {
            toggleButtonBackgroundPositive($(this));
