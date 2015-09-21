@@ -54,9 +54,9 @@
         
         <test-template ng-controller="scoresCtrl"></test-template>
 		
-		<div id="add-player-div">
+		<button id="add-player-div">
 			<h2>Add a player</h2>
-		</div>
+		</button>
         <footer style="align: bottom">
             <button id="menu-toggle">Options</button>
             <div id="number-players-selector" style="">
@@ -86,58 +86,9 @@
     
     <!-- javascript files -->
     <script src="https://code.angularjs.org/1.4.5/angular.js"></script>
+    <script src="angular-app.js"></script>
     <script src="js/player.js"></script>
     <script src="js/game.js"></script>
     <!--<script src="js/ui_controller.js"></script>-->
-    
-    <script>
-        //instantiates the Angular app
-        var counterApp = angular.module("counterApp", []);
-        
-        
-        counterApp.controller('scoresCtrl', function($scope) {
-            $scope.twoTrainLengthScore = 2;
-            $scope.threeTrainLengthScore = 4;
-            $scope.fourTrainLengthScore = 7;
-            $scope.fiveTrainLengthScore = 10;
-            $scope.sixTrainLengthScore = 15;
-            
-            $scope.playerScore = 0;
-            
-            
-            $scope.addScore = function(value) {
-                $scope.playerScore += value;
-            };
-        })
-        .directive('testTemplate', ['$http', '$complile', 
-            function($http, $compile) {
-                return {
-                    templateUrl: 'template.html', 
-                }
-            }
-        ]);
-        
-        $("button").mousedown(function() {
-           toggleButtonBackgroundPositive($(this));
-        })
-        .mouseup(function() {
-           toggleButtonBackgroundPositive($(this));
-        })
-        //removes the background color even if the mouse is pulled away from the button
-        .mouseleave(function() {
-            if($(this).hasClass("click-background-color-positive")) {
-                toggleButtonBackgroundPositive($(this));
-            }
-        });
-        
-        var toggleButtonBackgroundPositive = function(element) {
-            $(element).toggleClass("click-background-color-positive");
-        }
-        
-        var toggleButtonBackgroundNegative = function(element) {
-            $(element).toggleClass("click-background-color-negative");
-        }
-
-    </script>
 </body>
 </html>
