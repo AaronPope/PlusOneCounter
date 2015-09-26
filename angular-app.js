@@ -1,6 +1,5 @@
 var counterApp = angular.module("counterApp", []);
-        
-        
+             
         counterApp.controller('scoresCtrl', function($scope) {
             $scope.twoTrainLengthScore = 2;
             $scope.threeTrainLengthScore = 4;
