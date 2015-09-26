@@ -14,13 +14,13 @@ var counterApp = angular.module("counterApp", []);
                 $scope.playerScore += value;
             };
         })
-        .directive('testTemplate', ['$http', '$complile', 
-            function($http, $compile) {
+        .directive('testTemplate', function($http, $compile) {
                 return {
-                    templateUrl: 'template.html', 
+                    transclude: true,
+                    templateUrl: 'template.html' 
                 }
             }
-        ]);
+        );
         
         $("button").mousedown(function() {
            toggleButtonBackgroundPositive($(this));
@@ -42,3 +42,7 @@ var counterApp = angular.module("counterApp", []);
         var toggleButtonBackgroundNegative = function(element) {
             $(element).toggleClass("click-background-color-negative");
         }
+        
+        $("#reset-scores-option").click(function() {
+            alert("it was clicked");
+        });

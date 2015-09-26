@@ -49,7 +49,7 @@
                             <li><a href="#">(4) Four</a></li>
                             <li><a href="#">(5) Five</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Reset Scores</a></li>
+                        <li><a href="#" id="reset-scores-option">Reset Scores</a></li>
                       </ul>
                     </li>
                     <li><a href="#">Reset Scores</a></li>
@@ -58,20 +58,25 @@
         </div>
     </nav>
     
-    <div ng-controller="scoresCtrl" id="player-1" class="player-box">			
-            <div class="remove-player">X</div>	
-			<input type="text" id="player-1-name" class="player-name-field" placeholder="Who's playing?  Click to enter your name!"/>
-
-			<h2 ng-model="playerScore" id="score" class="headline-secondary--grouped">{{playerScore}}</h2>
-
-			<div class = "buttons-group">
-				<button ng-click="addScore(2)" class="add-2-train btn--default">2</button>
-				<button ng-click="addScore(4)" class="add-3-train btn--default">3</button>
-				<button ng-click="addScore(7)" class="add-4-train btn--default">4</button>
-				<button ng-click="addScore(10)" class="add-5-train btn--default">5</button>
-				<button ng-click="addScore(15)" class="add-6-train btn--default">6</button>
-			</div>
-		</div>
+    <div ng-controller="scoresCtrl" id="player-1" class="player-box">
+        <test-template></test-template>
+    </div>
+    
+    <div ng-controller="scoresCtrl" id="player-2" class="player-box">
+        <test-template></test-template>
+    </div>
+    
+    <div ng-controller="scoresCtrl" id="player-3" class="player-box">
+        <test-template></test-template>
+    </div>
+    
+    <div ng-controller="scoresCtrl" id="player-4" class="player-box">
+        <test-template></test-template>
+    </div>
+    
+    <div ng-controller="scoresCtrl" id="player-5" class="player-box">
+        <test-template></test-template>
+    </div>
 <!--
     <header style="background-color: gray;">
         <button  class="simple-menu button-no-background-no-border" class ="btn btn-default" style="font-size: 2em; float: left;">
