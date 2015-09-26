@@ -39,7 +39,7 @@ button {
 }
 
 .buttons-group button {
-	//nothing yet
+	/* nothing yet */
 }
 
 .remove-player {
@@ -78,6 +78,17 @@ button {
 .click-background-color-negative {
     background-color: indianred;
 }
+
+.number-of-players-option {
+    padding-right: 3em;
+    margin-bottom: .5em;
+}
+
+.button-no-background-no-border {
+    background-color: transparent;
+    border: none;
+    outline: none; 
+}
 /*********************************************
                 *** IDs ***
  *********************************************/
@@ -97,7 +108,9 @@ button {
 	margin: 0 auto;
 }
 		
-
+#players {
+    background-color: aqua;
+}
 
 
 /*********************************************
@@ -111,7 +124,14 @@ input:focus {
 	background-color: rgba(33, 24, 115, .35);
 }
 
+/* Mobile (portrait) */
+@media only screen and (max-width: 420px) {
+    #players {
+        background-color: orange;
+    }
+}
 
+/* Tablets (portrait) */
 @media only screen and (max-width: 768px) {
 	/*** Standard Elements ***/
 	#headline {
@@ -135,6 +155,7 @@ input:focus {
 	}
 }
 
+/* Standard Screens */
 @media only screen and (max-width: 970px) {
-    background-color: orange;
+    background-color: #abcdef;
 }

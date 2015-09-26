@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="counterApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Untitled Project</title>
+    <link rel="stylesheet" type="text/css" href="css/responsive_styles.css">
+    <link rel="stylesheet" href="sidr-1.2.1/stylesheets/jquery.sidr.dark.css">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="sidr-1.2.1/jquery.sidr.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+
+</head>
+    
+<body>
+    <header style="background-color: gray;">
+        <button  class="simple-menu button-no-background-no-border" class ="btn btn-default" style="font-size: 2em; float: left;">
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+        </button>
+        <h2 style="text-align: center;">Score Counter</h2>
+    </header>
+    <div id="sidr">
+        <button class="simple-menu button-no-background-no-border" style="margin: 0 auto;">
+            <span style="font-size: 1.5em; margin: .2em auto;" class="glyphicon glyphicon-menu-left"></span>
+        </button>
+        <ul>
+            <li>Base Game (USA)</li>
+            <li>Europe</li>
+            <li>
+                <p>Number of players</p>
+                <input class="number-of-players-option" type="radio" name="number-of-players" value="2" /> 2
+                <input class="number-of-players-option" type="radio" name="number-of-players" value="3" /> 3
+                <input class="number-of-players-option" type="radio" name="number-of-players" value="4" /> 4
+                <input class="number-of-players-option" type="radio" name="number-of-players" value="5" /> 5
+            </li>
+        </ul>
+    </div>
+    
+    <h1>Need some big text</h1>
+    
+    <!-- Scripts -->
+    
+    
+    <script>
+$(document).ready(function() {
+    
+    var fadeSpeed = 700;
+    
+    $('.simple-menu').sidr({
+        displace : false,
+        speed : fadeSpeed
+    });
+});
+        
+
+</script>
+</body>
+</html>
