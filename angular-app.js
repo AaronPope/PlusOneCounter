@@ -20,6 +20,13 @@ var counterApp = angular.module("counterApp", []);
                     templateUrl: 'template.html' 
                 }
             }
+        )
+        .directive('genericCounter', function($http, $compile) {
+                return {
+                    transclude: true,
+                    templateUrl: 'generic-counter.html' 
+                }
+            }
         );
         
         $("button").mousedown(function() {
