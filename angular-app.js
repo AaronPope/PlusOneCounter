@@ -22,20 +22,26 @@ var counterApp = angular.module("counterApp", []);
         });
              
         counterApp.controller('scoresCtrl', function($scope) {
+            var oneTrainLengthScore = 1;
             var twoTrainLengthScore = 2;
             var threeTrainLengthScore = 4;
             var fourTrainLengthScore = 7;
             var fiveTrainLengthScore = 10;
             var sixTrainLengthScore = 15;
             
+            var finalRound = false;
+            
             $scope.playerScore = 0;
             $scope.remainingTrains = 45;
             
             
             $scope.addScore = function(routeLength) {
-                updateRemainingTrains(routeLength);
-                
+                if($scope.remainingTrains >= routeLength) {
                 switch(routeLength) {
+                    case 1:
+                        updateScore(oneTrainLengthScore);                        
+                        break;
+                        
                     case 2:
                         updateScore(twoTrainLengthScore);                        
                         break;
@@ -59,6 +65,9 @@ var counterApp = angular.module("counterApp", []);
                     default:
                         break;
                 }
+                
+                updateRemainingTrains(routeLength);
+                }
             };
             
             function updateScore(points) {
@@ -66,7 +75,17 @@ var counterApp = angular.module("counterApp", []);
             }
             
             function updateRemainingTrains(routeLength) {
-                $scope.remainingTrains -= routeLength;
+                if($scope.remainingTrains < routeLength) {
+                    alert("Hmm... Something's not adding up.\n\nIt doesn't seem that you have enough trains to play that route!");
+                }
+                else {
+                    $scope.remainingTrains -= routeLength;    
+                }
+                
+                if($scope.remainingTrains <= 2 && !finalRound) {
+                    alert("You have initiated the final round!  Everyone gets one more play.");
+                    finalRound = true;
+                }
             }
         })
         .directive('testTemplate', function($http, $compile) {
