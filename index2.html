@@ -32,7 +32,7 @@
       <a class="navbar-brand" href="#">Score Counter</a>
     </div>
             
-             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <div ng-controller="playersCtrl"  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul id="version-selection-list" class="nav navbar-nav">
                     <li class="active"><a href="#">Standard <span class="sr-only">(current)</span></a></li>
                     <li><a href="#">USA 1910</a></li>
@@ -43,13 +43,15 @@
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Number of Players <span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                          <li role="separator" class="divider"></li>
-                            <li><a href="#">(2) Two</a></li>
-                            <li><a href="#">(3) Three</a></li>
-                            <li><a href="#">(4) Four</a></li>
-                            <li><a href="#">(5) Five</a></li>
+<!--                          <li role="separator" class="divider"></li>-->
+                            <li><a href="#" ng-click="setNumberOfPlayers(2)">(2) Two</a></li>
+                            <li><a href="#" ng-click="setNumberOfPlayers(3)">(3) Three</a></li>
+                            <li><a href="#" ng-click="setNumberOfPlayers(4)">(4) Four</a></li>
+                            <li><a href="#" ng-click="setNumberOfPlayers(5)">(5) Five</a></li>
+<!--
                         <li role="separator" class="divider"></li>
                         <li><a href="#" id="reset-scores-option">Reset Scores</a></li>
+-->
                       </ul>
                     </li>
                     <li><a href="#">Reset Scores</a></li>
