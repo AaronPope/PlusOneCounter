@@ -14,11 +14,7 @@ var counterApp = angular.module("counterApp", []);
         });
 
         counterApp.controller('playersCtrl', function($scope) {
-            $scope.setNumberOfPlayers = function(numberOfPlayers) {
-                alert("New number of players is: " + sharedProperties.getNumberOfPlayers);
-                sharedProperties.setNumberOfPlayers(numberOfPlayers);
-                
-            }
+            
         });
              
         counterApp.controller('scoresCtrl', function($scope) {
@@ -30,6 +26,9 @@ var counterApp = angular.module("counterApp", []);
             var sixTrainLengthScore = 15;
             
             var finalRound = false;
+            $scope.players = [];
+            
+            
             
             $scope.playerScore = 0;
             $scope.remainingTrains = 45;
@@ -60,6 +59,7 @@ var counterApp = angular.module("counterApp", []);
                         
                     case 6:
                         updateScore(sixTrainLengthScore);
+                        addPlayer(routeLength);
                         break;
                     
                     default:
@@ -86,6 +86,17 @@ var counterApp = angular.module("counterApp", []);
                     alert("You have initiated the final round!  Everyone gets one more play.");
                     finalRound = true;
                 }
+            }
+            
+            $scope.setNumberOfPlayers = function(numberOfPlayers) {
+                if(numberOfPlayers > $scope.players.length);
+                {
+                    while($scope.players.length < numberOfPlayers)
+                    {
+                        $scope.players.push({name: "Enter your name", score: 0, remainingTrains: 45});
+                    }
+                }
+                
             }
         })
         .directive('testTemplate', function($http, $compile) {
