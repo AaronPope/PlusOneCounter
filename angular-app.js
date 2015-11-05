@@ -89,11 +89,16 @@ var counterApp = angular.module("counterApp", []);
             }
             
             $scope.setNumberOfPlayers = function(numberOfPlayers) {
-                if(numberOfPlayers > $scope.players.length);
-                {
+                if(numberOfPlayers > $scope.players.length) {
                     while($scope.players.length < numberOfPlayers)
                     {
                         $scope.players.push({name: "Enter your name", score: 0, remainingTrains: 45});
+                    }
+                }
+                else if (numberOfPlayers < $scope.players.length) {
+                    while($scope.players.length > numberOfPlayers)
+                    {
+                        $scope.players.pop();
                     }
                 }
                 
