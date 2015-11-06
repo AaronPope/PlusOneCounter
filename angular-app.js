@@ -1,23 +1,24 @@
 var counterApp = angular.module("counterApp", []);
 
-        counterApp.service('sharedProperties', function () {
+        counterApp.factory('sharedProperties', function () {
             var numberOfPlayers = 0;
-
-            return {
-                getNumberOfPlayers: function () {
+            var service = {}
+            
+            service.getNumberOfPlayers = function () {
                     return numberOfPlayers;
-                },
-                setNumberOfPlayers: function(number) {
+                };
+            service.setNumberOfPlayers = function(number) {
                     numberOfPlayers = number;
-                }
-            };
+                };
+            
+            return service;
         });
 
         counterApp.controller('playersCtrl', function($scope) {
             
         });
              
-        counterApp.controller('scoresCtrl', function($scope) {
+        counterApp.controller('scoresCtrl', function($scope, sharedProperties) {
             var oneTrainLengthScore = 1;
             var twoTrainLengthScore = 2;
             var threeTrainLengthScore = 4;
@@ -38,7 +39,7 @@ var counterApp = angular.module("counterApp", []);
                 if($scope.remainingTrains >= routeLength) {
                 switch(routeLength) {
                     case 1:
-                        updateScore(oneTrainLengthScore);                        
+                        updateScore(oneTrainLengthScore); 
                         break;
                         
                     case 2:
