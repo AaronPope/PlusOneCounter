@@ -40,7 +40,7 @@ button {
 }
 
 .buttons-group button {
-	/* nothing yet */
+	margin: 0 .15em;
 }
 
 .remove-player {
@@ -62,7 +62,7 @@ button {
 	//outline: none;
 }
 
-.player-box , #add-player-div {
+.player-box {
 	width: 45%;
 	float: left;
 	margin: 1em 2.5%;
@@ -71,14 +71,6 @@ button {
 
 .btn--default:hover {
     color: lightgray;
-}
-
-.click-background-color-positive {
-    background-color: darkseagreen;
-}
-
-.click-background-color-negative {
-    background-color: indianred;
 }
 
 .number-of-players-option {

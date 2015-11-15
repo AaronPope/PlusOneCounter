@@ -15,7 +15,23 @@ var counterApp = angular.module("counterApp", []);
         });
 
         counterApp.controller('playersCtrl', function($scope) {
+            $scope.players = [];
             
+            $scope.setNumberOfPlayers = function(numberOfPlayers) {
+                if(numberOfPlayers > $scope.players.length) {
+                    while($scope.players.length < numberOfPlayers)
+                    {
+                        $scope.players.push({name: "Enter your name", score: 0, remainingTrains: 45});
+                    }
+                }
+                else if (numberOfPlayers < $scope.players.length) {
+                    while($scope.players.length > numberOfPlayers)
+                    {
+                        $scope.players.pop();
+                    }
+                }
+                
+            }
         });
              
         counterApp.controller('scoresCtrl', function($scope, sharedProperties) {
@@ -27,8 +43,9 @@ var counterApp = angular.module("counterApp", []);
             var sixTrainLengthScore = 15;
             
             var finalRound = false;
-            $scope.players = [];
             
+            var scoreResetValue = 0;
+            var remainingTrainsResetValue = 45;
             
             
             $scope.playerScore = 0;
@@ -60,7 +77,6 @@ var counterApp = angular.module("counterApp", []);
                         
                     case 6:
                         updateScore(sixTrainLengthScore);
-                        addPlayer(routeLength);
                         break;
                     
                     default:
@@ -89,20 +105,9 @@ var counterApp = angular.module("counterApp", []);
                 }
             }
             
-            $scope.setNumberOfPlayers = function(numberOfPlayers) {
-                if(numberOfPlayers > $scope.players.length) {
-                    while($scope.players.length < numberOfPlayers)
-                    {
-                        $scope.players.push({name: "Enter your name", score: 0, remainingTrains: 45});
-                    }
-                }
-                else if (numberOfPlayers < $scope.players.length) {
-                    while($scope.players.length > numberOfPlayers)
-                    {
-                        $scope.players.pop();
-                    }
-                }
-                
+            $scope.resetScores = function() {
+                $scope.remainingTrains = 45;
+                $scope.playerScore = 0;
             }
         })
         .directive('testTemplate', function($http, $compile) {
