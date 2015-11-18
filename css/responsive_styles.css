@@ -134,8 +134,7 @@ input:focus {
 	
 	/*** Classes ***/
 	.player-name-field, #add-player-div {
-		width: 100%;
-		margin: 0 1em;
+		width: 90%;
 	}
 	
 	.player-box {
