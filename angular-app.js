@@ -124,6 +124,13 @@ var counterApp = angular.module("counterApp", []);
                 }
             }
         );
+
+counterApp.module('myApp', ['ngMaterial'])
+.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('pink')
+    .accentPalette('orange');
+});
         
         $("button").mousedown(function() {
            toggleButtonBackgroundPositive($(this));
