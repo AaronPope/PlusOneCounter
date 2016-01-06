@@ -1,4 +1,4 @@
-var counterApp = angular.module("counterApp", []);
+var counterApp = angular.module("counterApp", ['ngMaterial']);
                      
 counterApp.directive('testTemplate', function($http, $compile) {
                 return {
