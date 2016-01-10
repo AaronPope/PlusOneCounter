@@ -13,7 +13,10 @@
     
     <!-- Angular Material Styles -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
+        <!-- Roboto text style -->
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+        <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Custom Styles -->
     <link rel="stylesheet" type="text/css" href="css/responsive_styles.css">
@@ -28,6 +31,42 @@
         <md-toolbar>
             <h1 class="md-toolbar-tools">Score Counter</h1>
         </md-toolbar>
+        
+        <!-- Skeleton for menu; needs to have some Angular js behind it -->
+        <md-menu>
+      <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)" style="background-color: orange;">
+        <i class="material-icons">people</i>
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button ng-click="ctrl.redial($event)">
+            <i class="material-icons">people</i>
+            Redial
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button disabled="disabled" ng-click="ctrl.checkVoicemail()">
+            <i class="material-icons">people</i>
+            Check voicemail
+          </md-button>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item>
+          <md-button ng-click="ctrl.toggleNotifications()">
+<!--
+            <md-icon md-svg-icon="social:notifications-{{ctrl.notificationsEnabled ? 'off' : 'on'}}"></md-icon>
+            {{ctrl.notificationsEnabled ? 'Disable' : 'Enable' }} notifications
+-->
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+        
+        
+        
+        
+        
+        
         <div class="container-fluid">
             <div class="navbar-header">
                 <md-sidenav>

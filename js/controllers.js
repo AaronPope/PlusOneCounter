@@ -101,4 +101,10 @@ angular.module('counterApp')
                 $scope.remainingTrains = 45;
                 $scope.playerScore = 0;
             }
+        })
+    .controller('menuCtrl', function fnMenuCtrl($mdDialog) {
+            this.openMenu = function($mdOpenMenu, ev) {
+                originatorEv = ev;
+                $mdOpenMenu(ev);
+            };
         });
