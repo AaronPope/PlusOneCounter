@@ -27,40 +27,57 @@
     
 <body>
     <div ng-controller="playersCtrl" ng-init="setNumberOfPlayers(2)">
-    <nav class="navbar navbar-inverse">
-        <md-toolbar>
-            <h1 class="md-toolbar-tools">Score Counter</h1>
-        </md-toolbar>
-        
-        <!-- Skeleton for menu; needs to have some Angular js behind it -->
-        <md-menu>
-      <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)" style="background-color: orange;">
-        <i class="material-icons">people</i>
-      </md-button>
-      <md-menu-content width="4">
-        <md-menu-item>
-          <md-button ng-click="ctrl.redial($event)">
-            <i class="material-icons">people</i>
-            Redial
-          </md-button>
-        </md-menu-item>
-        <md-menu-item>
-          <md-button disabled="disabled" ng-click="ctrl.checkVoicemail()">
-            <i class="material-icons">people</i>
-            Check voicemail
-          </md-button>
-        </md-menu-item>
-        <md-menu-divider></md-menu-divider>
-        <md-menu-item>
-          <md-button ng-click="ctrl.toggleNotifications()">
-<!--
-            <md-icon md-svg-icon="social:notifications-{{ctrl.notificationsEnabled ? 'off' : 'on'}}"></md-icon>
-            {{ctrl.notificationsEnabled ? 'Disable' : 'Enable' }} notifications
--->
-          </md-button>
-        </md-menu-item>
-      </md-menu-content>
-    </md-menu>
+        <md-content>
+    <br>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+        <h2>
+          <span>Toolbar with Icon Buttons</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <br>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button aria-label="Go Back">
+          Go Back
+        </md-button>
+        <h2>
+          <span>Toolbar with Standard Buttons</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-raised" aria-label="Learn More">
+          Learn More
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <br>
+    <md-toolbar class="md-tall md-accent">
+      <h2 class="md-toolbar-tools">
+        <span>Toolbar: tall (md-accent)</span>
+      </h2>
+    </md-toolbar>
+    <br>
+    <md-toolbar class="md-tall md-warn md-hue-3">
+      <span flex></span>
+      <h2 class="md-toolbar-tools md-toolbar-tools-bottom">
+        <span class="md-flex">Toolbar: tall with actions pin to the bottom (md-warn md-hue-3)</span>
+      </h2>
+    </md-toolbar>
+  </md-content>
         
         
         
@@ -106,7 +123,7 @@
                 </div><!-- /.navbar-collapse -->
                 </md-sidenav>
         </div>
-    </nav>
+
         <md-divider></md-divider>
         <div ng-repeat="player in players" test-template></div>
     </div>
