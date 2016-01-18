@@ -8,12 +8,12 @@ angular.module('counterApp')
                 if(numberOfPlayers > $scope.players.length) {
                     while($scope.players.length < numberOfPlayers)
                     {
-                        $scope.players.push(
-                                            {
-                                                name: "Enter your name", 
-                                                score: 0, 
-                                                remainingTrains: 45
-                                            }
+                        $scope.players.push(    
+                                                {
+                                                    name: "Enter your name", 
+                                                    score: 0, 
+                                                    remainingTrains: 45
+                                                }
                                            );
                     }
                 }
