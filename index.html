@@ -33,65 +33,56 @@
         <md-button aria-label="Go Back">
           Go Back
         </md-button>
-            <h2>
-              <span>Score Counter - Ticket to Ride</span>
-            </h2>
+            <h1>
+              <span class="title-text">Score Counter - Ticket to Ride</span>
+            </h1>
         <span flex></span>
+<!--
         <md-button class="md-raised" aria-label="Learn More">
           Learn More
         </md-button>
-        <md-button class="md-fab md-mini" aria-label="Favorite">
-          <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
-        </md-button>
+-->
+        <md-fab-speed-dial md-open="" md-direction="left"
+                         ng-class="">
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-secondary md">
+              <md-icon>
+                <i class="material-icons" style="font-size: 1.2em; text-shadow: 1px 1px rgba(0, 0, 0, .25);">group_add</i>
+              </md-icon>
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button aria-label="Twitter" class="md-fab md-raised md-mini" ng-click="setNumberOfPlayers(5)">
+            5
+          </md-button>
+          <md-button aria-label="Twitter" class="md-fab md-raised md-mini" ng-click="setNumberOfPlayers(4)">
+            4
+          </md-button>
+          <md-button aria-label="Facebook" class="md-fab md-raised md-mini" ng-click="setNumberOfPlayers(3)">
+            3
+          </md-button>
+          <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini" ng-click="setNumberOfPlayers(2)">
+              2
+          </md-button>
+        </md-fab-actions>
+      </md-fab-speed-dial>
       </div>
     </md-toolbar>
     <br>
   </md-content>
         
         
-        
-        
-        
-        
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <md-sidenav>
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Score Counter</a>
-    </div>
-            
-             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    
+
+<!--
+    Reference for items to add back in
+
                   <ul id="version-selection-list" class="nav navbar-nav">
                     <li class="active"><a href="#">Standard <span class="sr-only">(current)</span></a></li>
                     <li><a href="#">USA 1910</a></li>
                     <li><a href="#">Europe</a></li>
                   </ul>
-                  <ul class="nav navbar-nav navbar-right">
-                    
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Number of Players <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-<!--                          <li role="separator" class="divider"></li>-->
-                            <li><a href="#" ng-click="setNumberOfPlayers(2)">(2) Two</a></li>
-                            <li><a href="#" ng-click="setNumberOfPlayers(3)">(3) Three</a></li>
-                            <li><a href="#" ng-click="setNumberOfPlayers(4)">(4) Four</a></li>
-                            <li><a href="#" ng-click="setNumberOfPlayers(5)">(5) Five</a></li>
-<!--
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#" id="reset-scores-option">Reset Scores</a></li>
 -->
-                      </ul>
-                    </li>
-                    <li><a href="#">Reset Scores</a></li>
-                  </ul>
-                </div><!-- /.navbar-collapse -->
-                </md-sidenav>
-        </div>
 
         <md-divider></md-divider>
         <div ng-repeat="player in players" test-template></div>
@@ -107,7 +98,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
     
     <!-- App Scripts-->
-    <script src="angular-app.js"></script>
+    <script src="js/angular-app.js"></script>
     <script src="js/ui_controller.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/services.js"></script>
