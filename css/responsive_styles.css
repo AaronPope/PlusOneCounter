@@ -89,6 +89,10 @@ button {
     text-shadow: 1px 1px rgba(255, 255, 255, .35);
 }
 
+.route-length-button.md-button {
+    margin-bottom: .25em;
+}
+
 /*********************************************
                 *** IDs ***
  *********************************************/
@@ -132,7 +136,7 @@ input:focus {
 }
 
 /* Tablets (portrait) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 813px) {
 	/*** Standard Elements ***/
 	#headline {
 		margin: 0 auto;
@@ -149,6 +153,12 @@ input:focus {
         padding: 0 .75em;
         background-color: #f6f6f6;
 	}
+    
+    /* temporary fix until I figure out how to dynamically size text */
+    /* !!! Should change break point back to 768 once this is determined */
+    .title-text {
+        visibility: collapse;
+    }
 	
 	/*** IDs ***/
 	#players {
