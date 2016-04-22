@@ -28,48 +28,48 @@
 <body>
     <div ng-controller="playersCtrl" ng-init="setNumberOfPlayers(2)">
         <md-content>
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <md-button aria-label="Go Back">
-          Go Back
-        </md-button>
-            <h1>
-              <span flex class="title-text">Score Counter - Ticket to Ride</span>
-            </h1>
-        <span flex></span>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <md-button aria-label="Go Back">
+                        Go Back
+                    </md-button>
+                <h1>
+                    <span flex class="title-text">Score Counter - Ticket to Ride</span>
+                </h1>
+                <span flex></span>
 <!--
         <md-button class="md-raised" aria-label="Learn More">
           Learn More
         </md-button>
 -->
-        <md-fab-speed-dial md-open="" md-direction="left"
-                         ng-class="">
-        <md-fab-trigger>
-          <md-button aria-label="menu" class="md-fab md-secondary md">
-              <md-icon>
-                <i class="material-icons" style="font-size: 1.2em; text-shadow: 1px 1px rgba(0, 0, 0, .25);">group_add</i>
-              </md-icon>
-          </md-button>
-        </md-fab-trigger>
-        <md-fab-actions>
-          <md-button aria-label="Twitter" class="md-fab md-raised md-mini" ng-click="setNumberOfPlayers(5)">
-            5
-          </md-button>
-          <md-button aria-label="Twitter" class="md-fab md-raised md-mini" ng-click="setNumberOfPlayers(4)">
-            4
-          </md-button>
-          <md-button aria-label="Facebook" class="md-fab md-raised md-mini" ng-click="setNumberOfPlayers(3)">
-            3
-          </md-button>
-          <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini" ng-click="setNumberOfPlayers(2)">
-              2
-          </md-button>
-        </md-fab-actions>
-      </md-fab-speed-dial>
-      </div>
-    </md-toolbar>
-    <br>
-  </md-content>
+                    <md-fab-speed-dial md-open="" md-direction="left"
+                             ng-class="">
+                        <md-fab-trigger>
+                            <md-button aria-label="menu" class="md-fab md-secondary md">
+                                <md-icon>
+                                    <i class="material-icons" style="font-size: 1.2em; text-shadow: 1px 1px rgba(0, 0, 0, .25);">group_add</i>
+                                </md-icon>
+                            </md-button>
+                        </md-fab-trigger>
+                        <md-fab-actions>
+                            <md-button aria-label="Twitter" class="md-fab md-raised md-mini" ng-click="setNumberOfPlayers(5)">
+                                5
+                            </md-button>
+                        <md-button aria-label="Twitter" class="md-fab md-raised md-mini" ng-click="setNumberOfPlayers(4)">
+                                4
+                            </md-button>
+                            <md-button aria-label="Facebook" class="md-fab md-raised md-mini" ng-click="setNumberOfPlayers(3)">
+                                3
+                            </md-button>
+                            <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini" ng-click="setNumberOfPlayers(2)">
+                                2
+                            </md-button>
+                        </md-fab-actions>
+                    </md-fab-speed-dial>
+                </div>
+            </md-toolbar>
+        <br>
+        </md-content>
         
         
     
@@ -85,7 +85,9 @@
 -->
 
         <md-divider></md-divider>
+        <md-content class="md-padding" layout-sm="column" layout="row">
         <div ng-repeat="player in players" test-template></div>
+        </md-content>
     </div>
     
     <!-- Scripts -->
